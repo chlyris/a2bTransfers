@@ -1,0 +1,32 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+@import "@fortawesome/fontawesome-free/css/all.min.css";
+
+:root {
+  --blue: #0071BC;
+  --gold: #d8a97d;
+}
+
+body {
+  font-family: "Sofia Sans Condensed", sans-serif;
+  font-size: 18px;
+}
+
+.login-button {
+  font-size: 25px;
+  background-color: var(--blue);
+  color: #f8f9fa;
+  padding: 5px 30px 5px 30px;
+  min-width: 133px;
+}
+
+.login-button:hover {
+  font-size: 25px;
+  background-color: var(--gold);
+  color: #f8f9fa;
+  border: 2px solid var(--blue);
+}
