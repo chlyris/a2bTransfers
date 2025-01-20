@@ -6,6 +6,8 @@
 
 @import "@fortawesome/fontawesome-free/css/all.min.css";
 
+@import 'select2/dist/css/select2.css';
+
 :root {
   --blue: #0071BC;
   --gold: #d8a97d;

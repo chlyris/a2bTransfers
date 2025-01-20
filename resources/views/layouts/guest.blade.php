@@ -13,7 +13,7 @@
     @vite(['resources/css/app.css'])
 </head>
 <body class="bg-dark text-white">
-    <div class="container py-5 d-flex flex-column justify-content-center vh-100" role="main" aria-labelledby="main-heading">
+    <div class="container py-5 d-flex flex-column justify-content-center min-vh-100" role="main" aria-labelledby="main-heading">
         <div class="d-flex flex-column justify-content-center border rounded-5 border-white mx-auto p-5">
 
             <header class="mb-4 text-center" role="banner">
