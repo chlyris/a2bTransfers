@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\AdminMiddleware;
+use App\Http\Controllers\Admin\CarController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -24,4 +25,8 @@ Route::middleware(['auth', AdminMiddleware::class])->group(function () {
     Route::get('/admin', function () {
         return view('admin.home');
     })->name('admin.home');
+});
+
+Route::middleware(['auth', AdminMiddleware::class])->prefix('admin')->name('admin.')->group(function () {
+    Route::resource('cars', CarController::class);
 });

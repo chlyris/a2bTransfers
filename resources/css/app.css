@@ -13,6 +13,22 @@
   --gold: #d8a97d;
 }
 
+.bc {
+  color: var(--blue);
+}
+
+.bb {
+  background-color: var(--blue);
+}
+
+.gc {
+  color: var(--gold);
+}
+
+.gb {
+  background-color: var(--gold);
+}
+
 body {
   font-family: "Sofia Sans Condensed", sans-serif;
   font-size: 18px;
@@ -31,4 +47,12 @@ body {
   background-color: var(--gold);
   color: #f8f9fa;
   border: 2px solid var(--blue);
+}
+
+a.navbar-brand {
+  border: 2px solid var(--gold);
+  padding: 0px 20px;
+  border-radius: 10px;
+  font-size: 25px;
+  background-color: var(--blue);
 }
