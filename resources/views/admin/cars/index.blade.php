@@ -13,7 +13,7 @@
       <thead>
         <tr>
           <th>#</th>
-          <th>Photo</th>
+          <th>Photox</th>
           <th>Car</th>
           <th>Plate</th>
           <th>Year</th>
