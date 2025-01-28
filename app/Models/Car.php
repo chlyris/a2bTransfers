@@ -26,4 +26,9 @@ class Car extends Model
         'kteo_expiration',
         'notes',
     ];
+
+    public function services()
+    {
+        return $this->hasMany(Service::class);
+    }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Car;
+use App\Models\Service;
 
 class CarController extends Controller
 {
@@ -55,7 +56,8 @@ class CarController extends Controller
 
     public function edit(Car $car)
     {
-        return view('admin.cars.edit', compact('car'));
+        $services = $car->services; // Fetch all related service records
+        return view('admin.cars.edit', compact('car', 'services'));
     }
 
     public function update(Request $request, Car $car)
@@ -83,6 +85,33 @@ class CarController extends Controller
         }
 
         $car->update($validated);
+
+        // Update existing services
+        if ($request->has('services')) {
+            foreach ($request->services as $id => $data) {
+                $service = Service::find($id);
+                if ($service) {
+                    $service->update($data);
+                }
+            }
+        }
+
+        // Add new services
+        if ($request->has('new_services')) {
+            foreach ($request->new_services as $data) {
+                $car->services()->create($data);
+            }
+        }
+
+        // Remove deleted services
+        if ($request->has('removed_services')) {
+            foreach ($request->removed_services as $id) {
+                $service = Service::find($id);
+                if ($service) {
+                    $service->delete();
+                }
+            }
+        }
 
         return redirect()->route('admin.cars.index')->with('success', 'Car updated successfully.');
     }
