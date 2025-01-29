@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\AdminMiddleware;
 use App\Http\Controllers\Admin\CarController;
+use App\Http\Controllers\Admin\DriverController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -29,4 +30,8 @@ Route::middleware(['auth', AdminMiddleware::class])->group(function () {
 
 Route::middleware(['auth', AdminMiddleware::class])->prefix('admin')->name('admin.')->group(function () {
     Route::resource('cars', CarController::class);
+});
+
+Route::middleware(['auth', AdminMiddleware::class])->prefix('admin')->name('admin.')->group(function () {
+    Route::resource('drivers', DriverController::class)->parameters(['drivers' => 'driver']);
 });

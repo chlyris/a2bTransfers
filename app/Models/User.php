@@ -29,6 +29,12 @@ class User extends Authenticatable
         'passport_id',
         'avatar',
         'type',
+        'id_number',
+        'license_number',
+        'afm',
+        'amka',
+        'notes',
+        'active'
     ];
 
     /**
