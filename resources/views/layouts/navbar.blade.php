@@ -12,6 +12,9 @@
         <li class="nav-item">
           <a class="nav-link" href="{{ route('admin.drivers.index') }}"><i class="fa-regular fa-id-card me-1"></i>Drivers</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ route('admin.routes.index') }}"><i class="fa-regular fa-id-card me-1"></i>Routes</a>
+        </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Dropdown

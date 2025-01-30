@@ -31,4 +31,9 @@ class Car extends Model
     {
         return $this->hasMany(Service::class);
     }
+
+    public function routePrices()
+    {
+        return $this->hasMany(RoutePrice::class);
+    }
 }
